@@ -1,0 +1,30 @@
+[
+  {
+    "image": "assets/images/latteImage.png",
+    "title": "Latte",
+    "subTitle": "Best Coffee",
+    "price": 30.25,
+    "volume": 60
+  },
+  {
+    "image": "assets/images/espressoImage.png",
+    "title": "Espresso",
+    "subTitle": "Best Coffee",
+    "price": 15.75,
+    "volume": 40
+  },
+  {
+    "image": "assets/images/blackCoffeeImage.png",
+    "title": "Black Coffee",
+    "subTitle": "Best Coffee",
+    "price": 40.18,
+    "volume": 40
+  },
+  {
+    "image": "assets/images/coldCoffeeImage.png",
+    "title": "Cold Coffee",
+    "subTitle": "Best Coffee",
+    "price": 35.55,
+    "volume": 100
+  }
+]

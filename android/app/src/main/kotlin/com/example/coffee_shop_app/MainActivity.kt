@@ -1,4 +1,4 @@
-package com.example.coffee_shop_app
+package com.rado.coffee_shop_app
 
 import io.flutter.embedding.android.FlutterActivity
 

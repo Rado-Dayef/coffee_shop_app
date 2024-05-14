@@ -1,0 +1,19 @@
+import 'package:coffee_shop_app/constants/app_imports.dart';
+
+class AppBindings extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(
+      () => HomeController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => DetailsController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => GetStartedController(),
+      fenix: true,
+    );
+  }
+}
