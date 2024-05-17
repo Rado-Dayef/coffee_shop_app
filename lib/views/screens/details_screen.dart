@@ -118,12 +118,16 @@ class DetailsScreen extends GetWidget<DetailsController> {
                       ],
                     ),
                   ),
-                  Text(
-                    AppStrings.dollarSign + AppStrings.spaceSign + controller.coffeeFromArguments.price.toString(),
-                    style: AppFonts.font20White.copyWith(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 24.sp,
-                    ),
+                  Obx(
+                    () {
+                      return Text(
+                        AppStrings.dollarSign + AppStrings.spaceSign + controller.totalPrice.value.toString(),
+                        style: AppFonts.font20White.copyWith(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24.sp,
+                        ),
+                      );
+                    },
                   ),
                 ],
               ),
@@ -152,32 +156,38 @@ class DetailsScreen extends GetWidget<DetailsController> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                height: 50.h,
-                width: 150.w,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: AppColors.lighterThenLightGrayColor,
-                  borderRadius: BorderRadius.circular(15.sp),
-                ),
-                child: Text(
-                  AppStrings.addToCartText,
-                  style: AppFonts.font20White.copyWith(
-                    fontWeight: FontWeight.bold,
+              InkWell(
+                onTap: controller.onAddToCartClick,
+                child: Container(
+                  height: 50.h,
+                  width: 150.w,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: AppColors.lighterThenLightGrayColor,
+                    borderRadius: BorderRadius.circular(15.sp),
+                  ),
+                  child: Text(
+                    AppStrings.addToCartText,
+                    style: AppFonts.font20White.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
-              Container(
-                height: 50.sp,
-                width: 50.sp,
-                alignment: Alignment.center,
-                decoration: BoxDecoration(
-                  color: AppColors.orangeColor,
-                  borderRadius: BorderRadius.circular(15.sp),
-                ),
-                child: const Icon(
-                  Icons.favorite_border,
-                  color: Colors.white,
+              InkWell(
+                onTap: () => AppDefaults.defaultToast(AppStrings.thisFeatureIsNotAvailableToast),
+                child: Container(
+                  height: 50.sp,
+                  width: 50.sp,
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    color: AppColors.orangeColor,
+                    borderRadius: BorderRadius.circular(15.sp),
+                  ),
+                  child: const Icon(
+                    Icons.favorite_border,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],

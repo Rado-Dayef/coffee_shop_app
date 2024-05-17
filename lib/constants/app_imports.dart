@@ -5,6 +5,7 @@ export 'package:coffee_shop_app/constants/app_fonts.dart';
 export 'package:coffee_shop_app/constants/app_pages.dart';
 export 'package:coffee_shop_app/constants/app_shimmers.dart';
 export 'package:coffee_shop_app/constants/app_strings.dart';
+export 'package:coffee_shop_app/controllers/cart_controller.dart';
 export 'package:coffee_shop_app/controllers/details_controller.dart';
 export 'package:coffee_shop_app/controllers/get_started_controller.dart';
 export 'package:coffee_shop_app/controllers/home_controller.dart';

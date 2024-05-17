@@ -1,10 +1,16 @@
 import 'package:coffee_shop_app/constants/app_imports.dart';
+import 'package:coffee_shop_app/views/screens/cart_screen.dart';
 
 class AppPages {
   static List<GetPage> appPages = [
     GetPage(
       name: AppStrings.homeRoute,
       page: () => const HomeScreen(),
+      transition: Transition.noTransition,
+    ),
+    GetPage(
+      name: AppStrings.cartRoute,
+      page: () => const CartScreen(),
       transition: Transition.noTransition,
     ),
     GetPage(

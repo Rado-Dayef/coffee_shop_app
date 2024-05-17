@@ -9,9 +9,9 @@ class HomeScreen extends GetWidget<HomeController> {
       child: Scaffold(
         backgroundColor: AppColors.lightGrayColor,
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(225.h),
+          preferredSize: Size.fromHeight(210.h),
           child: Container(
-            height: 225.h,
+            height: 210.h,
             color: AppColors.transparentColor,
             child: Column(
               children: [
@@ -60,6 +60,8 @@ class HomeScreen extends GetWidget<HomeController> {
                     horizontal: 15.w,
                   ),
                   child: TextFormField(
+                    onTap: () => AppDefaults.defaultToast(AppStrings.thisFeatureIsNotAvailableToast),
+                    readOnly: true,
                     enableInteractiveSelection: false,
                     style: AppFonts.font20White.copyWith(
                       fontSize: 14.sp,
@@ -121,14 +123,64 @@ class HomeScreen extends GetWidget<HomeController> {
             ),
           ),
         ),
-        body: Obx(
-          () {
-            return controller.index.value == 0
-                ? HotCoffeeScreen(controller)
-                : controller.index.value == 1
-                    ? const ColdCoffeeScreen()
-                    : const CappuccinoScreen();
-          },
+        body: Padding(
+          padding: EdgeInsets.only(
+            bottom: 50.h,
+          ),
+          child: Obx(
+            () {
+              return controller.index.value == 0
+                  ? HotCoffeeScreen(controller)
+                  : controller.index.value == 1
+                      ? const ColdCoffeeScreen()
+                      : const CappuccinoScreen();
+            },
+          ),
+        ),
+        bottomSheet: Container(
+          height: 50.h,
+          decoration: BoxDecoration(color: AppColors.lightGrayColor, boxShadow: [
+            BoxShadow(
+              color: AppColors.darkGrayColor,
+              offset: const Offset(0, 0),
+              blurRadius: 8.sp,
+              spreadRadius: 2.sp,
+            ),
+          ]),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Icon(
+                Icons.home,
+                color: AppColors.orangeColor,
+                size: 30.sp,
+              ),
+              InkWell(
+                onTap: () => AppDefaults.defaultToast(AppStrings.thisFeatureIsNotAvailableToast),
+                child: Icon(
+                  Icons.favorite,
+                  color: AppColors.whiteColor,
+                  size: 30.sp,
+                ),
+              ),
+              InkWell(
+                onTap: () => AppDefaults.defaultToast(AppStrings.thisFeatureIsNotAvailableToast),
+                child: Icon(
+                  Icons.notifications,
+                  color: AppColors.whiteColor,
+                  size: 30.sp,
+                ),
+              ),
+              InkWell(
+                onTap: () => AppDefaults.defaultToast(AppStrings.thisFeatureIsNotAvailableToast),
+                child: Icon(
+                  Icons.person,
+                  color: AppColors.whiteColor,
+                  size: 30.sp,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

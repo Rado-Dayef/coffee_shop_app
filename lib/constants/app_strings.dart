@@ -6,6 +6,7 @@ class AppStrings {
 
   /// App Routes.
   static const String homeRoute = "/home";
+  static const String cartRoute = "/cart";
   static const String detailsRoute = "/details";
   static const String getStartedRoute = "/getStarted";
 
@@ -43,8 +44,10 @@ class AppStrings {
 
   /// App Texts.
   static const String mlText = "ml";
+  static const String cartText = "Cart";
   static const String latteText = "Latte";
   static const String volumeText = "Volume";
+  static const String buyNowText = "Buy Now";
   static const String espressoText = "Espresso";
   static const String hotCoffeeText = "Hot Coffee";
   static const String cappuccinoText = "Cappuccino";

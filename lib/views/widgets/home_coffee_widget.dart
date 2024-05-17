@@ -74,12 +74,15 @@ class HomeCoffeeWidget extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  CircleAvatar(
-                    backgroundColor: AppColors.orangeColor,
-                    radius: 15.sp,
-                    child: const Icon(
-                      Icons.add,
-                      color: AppColors.whiteColor,
+                  InkWell(
+                    onTap: () => AppDefaults.defaultToast(AppStrings.thisFeatureIsNotAvailableToast),
+                    child: CircleAvatar(
+                      backgroundColor: AppColors.orangeColor,
+                      radius: 15.sp,
+                      child: const Icon(
+                        Icons.add,
+                        color: AppColors.whiteColor,
+                      ),
                     ),
                   ),
                 ],
