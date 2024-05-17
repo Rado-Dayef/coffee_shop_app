@@ -1,5 +1,4 @@
 import 'package:coffee_shop_app/constants/app_imports.dart';
-import 'package:coffee_shop_app/views/screens/cart_screen.dart';
 
 class AppPages {
   static List<GetPage> appPages = [

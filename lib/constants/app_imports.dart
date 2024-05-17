@@ -11,6 +11,7 @@ export 'package:coffee_shop_app/controllers/get_started_controller.dart';
 export 'package:coffee_shop_app/controllers/home_controller.dart';
 export 'package:coffee_shop_app/models/coffee_model.dart';
 export 'package:coffee_shop_app/views/screens/cappuccino_screen.dart';
+export 'package:coffee_shop_app/views/screens/cart_screen.dart';
 export 'package:coffee_shop_app/views/screens/cold_coffee_screen.dart';
 export 'package:coffee_shop_app/views/screens/details_screen.dart';
 export 'package:coffee_shop_app/views/screens/get_started_screen.dart';
