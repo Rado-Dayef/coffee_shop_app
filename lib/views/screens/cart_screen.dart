@@ -91,7 +91,7 @@ class CartScreen extends GetWidget<CartController> {
                             Obx(
                               () {
                                 return Text(
-                                  controller.totalPrice.value.toString(),
+                                  AppStrings.dollarSign + AppStrings.spaceSign + controller.totalPrice.value.toString(),
                                   style: AppFonts.font20White.copyWith(
                                     fontWeight: FontWeight.bold,
                                   ),

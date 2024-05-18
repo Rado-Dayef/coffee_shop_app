@@ -1,3 +1,5 @@
+export 'dart:convert';
+
 export 'package:coffee_shop_app/constants/app_bindings.dart';
 export 'package:coffee_shop_app/constants/app_colors.dart';
 export 'package:coffee_shop_app/constants/app_defaults.dart';
