@@ -3,13 +3,7 @@ import 'package:coffee_shop_app/constants/app_imports.dart';
 class CartController extends GetxController {
   CoffeeModel coffeeFromArguments = Get.arguments[0];
   RxInt countFromArguments = Get.arguments[1];
-  RxDouble totalPrice = RxDouble(0);
-
-  @override
-  void onInit() {
-    totalPrice.value = countFromArguments.value * coffeeFromArguments.price;
-    super.onInit();
-  }
+  RxDouble totalPrice = Get.arguments[2];
 
   /// To increment the count with one and multiply it with the price.
   void onPlusOneToCount() {

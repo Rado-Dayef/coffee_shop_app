@@ -25,6 +25,6 @@ class DetailsController extends GetxController {
 
   /// To navigate from the details screen to the cart screen.
   void onAddToCartClick() {
-    Get.toNamed(AppStrings.cartRoute, arguments: [coffeeFromArguments, count]);
+    Get.toNamed(AppStrings.cartRoute, arguments: [coffeeFromArguments, count, totalPrice]);
   }
 }
