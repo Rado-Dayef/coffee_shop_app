@@ -89,35 +89,23 @@ class HomeScreen extends GetWidget<HomeController> {
                   ),
                 ),
                 const GapWidget(20),
-                Obx(
-                  () {
-                    return Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        InkWell(
-                          onTap: () => controller.index.value = 0,
-                          child: TabBarWidget(
-                            AppStrings.hotCoffeeText,
-                            isIndexTrue: controller.index.value == 0,
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () => controller.index.value = 1,
-                          child: TabBarWidget(
-                            AppStrings.coldCoffeeText,
-                            isIndexTrue: controller.index.value == 1,
-                          ),
-                        ),
-                        InkWell(
-                          onTap: () => controller.index.value = 2,
-                          child: TabBarWidget(
-                            AppStrings.cappuccinoText,
-                            isIndexTrue: controller.index.value == 2,
-                          ),
-                        ),
-                      ],
-                    );
-                  },
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    InkWell(
+                      child: TabBarWidget(
+                        onClick: () {},
+                        AppStrings.hotCoffeeText,
+                        isIndexTrue: true,
+                      ),
+                    ),
+                    const TabBarWidget(
+                      AppStrings.coldCoffeeText,
+                    ),
+                    const TabBarWidget(
+                      AppStrings.cappuccinoText,
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -127,15 +115,7 @@ class HomeScreen extends GetWidget<HomeController> {
           padding: EdgeInsets.only(
             bottom: 50.h,
           ),
-          child: Obx(
-            () {
-              return controller.index.value == 0
-                  ? HotCoffeeScreen(controller)
-                  : controller.index.value == 1
-                      ? const ColdCoffeeScreen()
-                      : const CappuccinoScreen();
-            },
-          ),
+          child: HotCoffeeScreen(controller),
         ),
         bottomSheet: Container(
           height: 50.h,

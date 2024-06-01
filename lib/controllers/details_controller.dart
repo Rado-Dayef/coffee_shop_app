@@ -1,9 +1,9 @@
 import 'package:coffee_shop_app/constants/app_imports.dart';
 
 class DetailsController extends GetxController {
-  CoffeeModel coffeeFromArguments = Get.arguments;
   RxInt count = RxInt(1);
   RxDouble totalPrice = RxDouble(0);
+  CoffeeModel coffeeFromArguments = Get.arguments;
 
   @override
   void onInit() {

@@ -18,14 +18,12 @@ class AppStrings {
   static const String dollarSign = "\$";
 
   /// App JSON Texts.
+  static const String dataJSONText = "data";
   static const String imageJSONText = "image";
   static const String titleJSONText = "title";
   static const String priceJSONText = "price";
   static const String volumeJSONText = "volume";
   static const String subTitleJSONText = "subTitle";
-
-  /// App JSONs.
-  static const String coffeeJSON = "assets/jsons/coffeeJSON.json";
 
   /// App Images.
   static const String latteImage = "assets/images/latteImage.png";
@@ -35,7 +33,6 @@ class AppStrings {
   static const String getStartedBackgroundImage = "assets/images/getStartedBackgroundImage.png";
 
   /// App Fonts.
-  static const String timesFont = "Times";
   static const String shadeBlueFont = "ShadeBlue";
 
   /// App Toasts.
@@ -57,5 +54,5 @@ class AppStrings {
   static const String bestCoffeeText = "Best Coffee";
   static const String blackCoffeeText = "Black Coffee";
   static const String findYourCoffeeText = "Find your coffee";
-  static const String coffeeDetailsText = "Coffee is a major source of antioxidants in the diet. It has many health benefits";
+  static const String coffeeDescriptionText = "Coffee is a major source of antioxidants in the diet. It has many health benefits";
 }

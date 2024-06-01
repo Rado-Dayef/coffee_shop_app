@@ -133,7 +133,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
               ),
               const GapWidget(20),
               Text(
-                AppStrings.coffeeDetailsText,
+                AppStrings.coffeeDescriptionText,
                 style: AppFonts.font20White.copyWith(
                   color: AppColors.transparentWhiteColor,
                   fontWeight: FontWeight.bold,

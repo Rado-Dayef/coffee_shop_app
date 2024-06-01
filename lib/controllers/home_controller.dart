@@ -1,28 +1,45 @@
 import 'package:coffee_shop_app/constants/app_imports.dart';
 
 class HomeController extends GetxController {
-  RxInt index = RxInt(0);
-  List<CoffeeModel> coffeeList = [];
+  Map<String, List<CoffeeModel>> coffeeList = {
+    AppStrings.dataJSONText: [
+      CoffeeModel(
+        AppStrings.latteImage,
+        price: 30,
+        volume: 60,
+        title: AppStrings.latteText,
+        subTitle: AppStrings.bestCoffeeText,
+        description: AppStrings.coffeeDescriptionText,
+      ),
+      CoffeeModel(
+        AppStrings.espressoImage,
+        price: 30,
+        volume: 60,
+        title: AppStrings.espressoText,
+        subTitle: AppStrings.bestCoffeeText,
+        description: AppStrings.coffeeDescriptionText,
+      ),
+      CoffeeModel(
+        AppStrings.blackCoffeeImage,
+        price: 30,
+        volume: 60,
+        title: AppStrings.blackCoffeeText,
+        subTitle: AppStrings.bestCoffeeText,
+        description: AppStrings.coffeeDescriptionText,
+      ),
+      CoffeeModel(
+        AppStrings.coldCoffeeImage,
+        price: 30,
+        volume: 100,
+        title: AppStrings.coldCoffeeText,
+        subTitle: AppStrings.bestCoffeeText,
+        description: AppStrings.coffeeDescriptionText,
+      ),
+    ]
+  };
 
   /// To navigate from the home screen to the details screen.
   void onCoffeeItemClick(CoffeeModel coffee) {
     Get.toNamed(AppStrings.detailsRoute, arguments: coffee);
-  }
-
-  /// To load the coffee data from the JSON file.
-  Future<void> loadCoffeeData() async {
-    try {
-      String jsonString = await rootBundle.loadString(AppStrings.coffeeJSON);
-      List<dynamic> jsonList = jsonDecode(jsonString);
-      await Future.delayed(
-        /// To create a delay with two second before assign the data into the list to display the shimmer animation.
-        const Duration(
-          seconds: 2,
-        ),
-        () => coffeeList = jsonList.map((json) => CoffeeModel.fromJson(json)).toList(),
-      );
-    } catch (e) {
-      AppDefaults.defaultToast(e.toString());
-    }
   }
 }
