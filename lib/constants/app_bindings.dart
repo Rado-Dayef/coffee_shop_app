@@ -4,19 +4,7 @@ class AppBindings extends Bindings {
   @override
   void dependencies() {
     Get.lazyPut(
-      () => HomeController(),
-      fenix: true,
-    );
-    Get.lazyPut(
-      () => CartController(),
-      fenix: true,
-    );
-    Get.lazyPut(
-      () => DetailsController(),
-      fenix: true,
-    );
-    Get.lazyPut(
-      () => GetStartedController(),
+      () => NavBarController(),
       fenix: true,
     );
   }

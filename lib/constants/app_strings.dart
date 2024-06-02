@@ -5,8 +5,8 @@ class AppStrings {
   static const String appSubTitle = "Felling Low? Take a Sip of Coffee";
 
   /// App Routes.
-  static const String homeRoute = "/home";
   static const String cartRoute = "/cart";
+  static const String navBarRoute = "/navBar";
   static const String detailsRoute = "/details";
   static const String getStartedRoute = "/getStarted";
 
@@ -45,14 +45,20 @@ class AppStrings {
   static const String latteText = "Latte";
   static const String volumeText = "Volume";
   static const String buyNowText = "Buy Now";
+  static const String profileText = "Profile";
+  static const String favoriteText = "Favorite";
   static const String espressoText = "Espresso";
   static const String hotCoffeeText = "Hot Coffee";
   static const String cappuccinoText = "Cappuccino";
-  static const String addToCartText = "Add to Cart";
+  static const String addToCartText = "Add To Cart";
   static const String getStartedText = "Get Started";
   static const String coldCoffeeText = "Cold Coffee";
   static const String bestCoffeeText = "Best Coffee";
   static const String blackCoffeeText = "Black Coffee";
+  static const String notificationsText = "Notifications";
+  static const String removeFromCartText = "Remove From Cart";
   static const String findYourCoffeeText = "Find your coffee";
+  static const String noFavoriteItemsYetText = "No favorite items yet";
+  static const String noItemsInYourCartText = "No items in your cart yet";
   static const String coffeeDescriptionText = "Coffee is a major source of antioxidants in the diet. It has many health benefits";
 }

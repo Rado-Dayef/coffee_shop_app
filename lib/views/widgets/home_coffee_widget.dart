@@ -7,6 +7,7 @@ class HomeCoffeeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    NavBarController navBarController = Get.find();
     return Padding(
       padding: EdgeInsets.only(
         top: 10.h,
@@ -75,13 +76,17 @@ class HomeCoffeeWidget extends StatelessWidget {
                     ),
                   ),
                   InkWell(
-                    onTap: () => AppDefaults.defaultToast(AppStrings.thisFeatureIsNotAvailableToast),
+                    onTap: () => navBarController.checkAndAddToCartCoffeeListOrDeleteFromCartCoffeeList(coffee),
                     child: CircleAvatar(
                       backgroundColor: AppColors.orangeColor,
                       radius: 15.sp,
-                      child: const Icon(
-                        Icons.add,
-                        color: AppColors.whiteColor,
+                      child: Obx(
+                        () {
+                          return Icon(
+                            coffee.inCart.value ? Icons.delete_outline : Icons.add,
+                            color: AppColors.whiteColor,
+                          );
+                        },
                       ),
                     ),
                   ),

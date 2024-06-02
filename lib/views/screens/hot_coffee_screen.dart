@@ -1,17 +1,18 @@
 import 'package:coffee_shop_app/constants/app_imports.dart';
 
 class HotCoffeeScreen extends StatelessWidget {
-  final HomeController controller;
-
-  const HotCoffeeScreen(this.controller, {super.key});
+  const HotCoffeeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    NavBarController navBarController = Get.find();
     return GridView.builder(
+      physics: const NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
       padding: EdgeInsets.symmetric(
         horizontal: 15.w,
       ),
-      itemCount: controller.coffeeList[AppStrings.dataJSONText]!.length,
+      itemCount: navBarController.coffeeList.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
         crossAxisSpacing: 20.sp,
@@ -19,9 +20,9 @@ class HotCoffeeScreen extends StatelessWidget {
         mainAxisExtent: 275.sp,
       ),
       itemBuilder: (BuildContext context, int index) {
-        CoffeeModel coffee = controller.coffeeList[AppStrings.dataJSONText]![index];
+        CoffeeModel coffee = navBarController.coffeeList[index];
         return InkWell(
-          onTap: () => controller.onCoffeeItemClick(coffee),
+          onTap: () => Get.toNamed(AppStrings.detailsRoute, arguments: coffee),
           child: HomeCoffeeWidget(coffee),
         );
       },

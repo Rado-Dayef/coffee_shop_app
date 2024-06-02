@@ -3,8 +3,8 @@ import 'package:coffee_shop_app/constants/app_imports.dart';
 class AppPages {
   static List<GetPage> appPages = [
     GetPage(
-      name: AppStrings.homeRoute,
-      page: () => const HomeScreen(),
+      name: AppStrings.navBarRoute,
+      page: () => const NavBarScreen(),
       transition: Transition.noTransition,
     ),
     GetPage(

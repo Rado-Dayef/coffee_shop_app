@@ -1,10 +1,12 @@
 import 'package:coffee_shop_app/constants/app_imports.dart';
 
-class DetailsScreen extends GetWidget<DetailsController> {
+class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    NavBarController navBarController = Get.find();
+    CoffeeModel coffeeFromArguments = Get.arguments;
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.lightGrayColor,
@@ -36,15 +38,15 @@ class DetailsScreen extends GetWidget<DetailsController> {
                   horizontal: 20.w,
                 ),
                 child: Hero(
-                  tag: controller.coffeeFromArguments.image,
+                  tag: coffeeFromArguments.image,
                   child: Image.asset(
-                    controller.coffeeFromArguments.image,
+                    coffeeFromArguments.image,
                   ),
                 ),
               ),
               const GapWidget(20),
               Text(
-                controller.coffeeFromArguments.subTitle,
+                coffeeFromArguments.subTitle,
                 style: AppFonts.font20White.copyWith(
                   color: AppColors.transparentWhiteColor,
                   fontWeight: FontWeight.bold,
@@ -53,7 +55,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
               ),
               const GapWidget(20),
               Text(
-                controller.coffeeFromArguments.title,
+                coffeeFromArguments.title,
                 style: AppFonts.font20White.copyWith(
                   fontWeight: FontWeight.bold,
                   fontSize: 30.sp,
@@ -77,7 +79,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         InkWell(
-                          onTap: controller.onMinusOneFromCount,
+                          onTap: () => navBarController.onMinusOneFromCountOfTheCoffeeItem(coffeeFromArguments),
                           child: Container(
                             height: 40.sp,
                             width: 40.sp,
@@ -93,7 +95,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
                         Obx(
                           () {
                             return Text(
-                              controller.count.value.toString(),
+                              coffeeFromArguments.count.value.toString(),
                               style: AppFonts.font20White.copyWith(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 24.sp,
@@ -102,7 +104,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
                           },
                         ),
                         InkWell(
-                          onTap: controller.onPlusOneToCount,
+                          onTap: () => navBarController.onPlusOneToCountOfTheCoffeeItem(coffeeFromArguments),
                           child: Container(
                             height: 40.sp,
                             width: 40.sp,
@@ -121,7 +123,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
                   Obx(
                     () {
                       return Text(
-                        AppStrings.dollarSign + AppStrings.spaceSign + controller.totalPrice.value.toString(),
+                        AppStrings.dollarSign + AppStrings.spaceSign + (coffeeFromArguments.count.value * coffeeFromArguments.price).toString(),
                         style: AppFonts.font20White.copyWith(
                           fontWeight: FontWeight.bold,
                           fontSize: 24.sp,
@@ -141,7 +143,7 @@ class DetailsScreen extends GetWidget<DetailsController> {
               ),
               const GapWidget(20),
               Text(
-                AppStrings.volumeText + AppStrings.colonSign + AppStrings.spaceSign + AppStrings.spaceSign + controller.coffeeFromArguments.volume.toString() + AppStrings.mlText,
+                AppStrings.volumeText + AppStrings.colonSign + AppStrings.spaceSign + AppStrings.spaceSign + coffeeFromArguments.volume.toString() + AppStrings.mlText,
                 style: AppFonts.font20White.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
@@ -157,25 +159,29 @@ class DetailsScreen extends GetWidget<DetailsController> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               InkWell(
-                onTap: controller.onAddToCartClick,
+                onTap: () => navBarController.checkAndAddToCartCoffeeListOrDeleteFromCartCoffeeList(coffeeFromArguments),
                 child: Container(
                   height: 50.h,
-                  width: 150.w,
+                  width: 200.w,
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: AppColors.lighterThenLightGrayColor,
                     borderRadius: BorderRadius.circular(15.sp),
                   ),
-                  child: Text(
-                    AppStrings.addToCartText,
-                    style: AppFonts.font20White.copyWith(
-                      fontWeight: FontWeight.bold,
-                    ),
+                  child: Obx(
+                    () {
+                      return Text(
+                        coffeeFromArguments.inCart.value ? AppStrings.removeFromCartText : AppStrings.addToCartText,
+                        style: AppFonts.font20White.copyWith(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),
               InkWell(
-                onTap: () => AppDefaults.defaultToast(AppStrings.thisFeatureIsNotAvailableToast),
+                onTap: () => navBarController.checkAndAddToFavCoffeeListOrDeleteFromFavCoffeeList(coffeeFromArguments),
                 child: Container(
                   height: 50.sp,
                   width: 50.sp,
@@ -184,9 +190,13 @@ class DetailsScreen extends GetWidget<DetailsController> {
                     color: AppColors.orangeColor,
                     borderRadius: BorderRadius.circular(15.sp),
                   ),
-                  child: const Icon(
-                    Icons.favorite_border,
-                    color: Colors.white,
+                  child: Obx(
+                    () {
+                      return Icon(
+                        coffeeFromArguments.isFav.value ? Icons.favorite : Icons.favorite_border,
+                        color: Colors.white,
+                      );
+                    },
                   ),
                 ),
               ),
