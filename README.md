@@ -1,12 +1,13 @@
 # Coffee Shop App
 
-This Flutter project is a coffee shop app consisting of three main screens: **Get Started**, **Home**, **Details**, and **Cart**. The app utilizes the GetX state management library and follows the MVC (Model-View-Controller) architecture for efficient organization and management of code.
+This Flutter project is a coffee shop app consisting of five main screens: **Get Started**, **Home**, **Details**, **Favorite**, and **Cart**. The app utilizes the GetX state management library and follows the MVC (Model-View-Controller) architecture for efficient organization and management of code.
 
 ## Screens:
 - Get Started: [Get Started Screen](https://github.com/Rado-Dayef/coffee_shop_app/assets/121133001/e81d5bce-25f9-44fe-8b03-5feadaece67c)
-- Home: [Home Screen](https://github.com/Rado-Dayef/coffee_shop_app/assets/121133001/3a2ff462-a1bf-4729-9105-6df8cddafc9c)
-- Details: [Details Screen](https://github.com/Rado-Dayef/coffee_shop_app/assets/121133001/8870e2bc-1bdd-4ea5-b25e-665652ad5944)
-- cart: [Cart Screen](https://github.com/Rado-Dayef/coffee_shop_app/assets/121133001/0bef13cb-4493-4034-8fe3-1cf1d116b20f)
+- Home: [Home Screen](https://github.com/Rado-Dayef/a/assets/121133001/b88595de-6863-4926-bcdb-80ce5ee3ec4d)
+- Details: [Details Screen](https://github.com/Rado-Dayef/a/assets/121133001/2c5a434a-e874-45f7-b87a-4ae667c6d020)
+- Favorite: [Favorite Screen](https://github.com/Rado-Dayef/a/assets/121133001/d01fa36b-7bf5-4c35-a564-d32384bfa9c2)
+- Cart: [Cart Screen](https://github.com/Rado-Dayef/a/assets/121133001/82ff3db4-38a7-48b3-82ae-cf58a69e02e2)
   
 ## Technologies Used:
 - Flutter.
